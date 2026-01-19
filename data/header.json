@@ -1,0 +1,17 @@
+{
+  "site_name": "News Project",
+  "menu": [
+    {
+      "title": "Bosh sahifa",
+      "link": "index.php"
+    },
+    {
+      "title": "Yangiliklar",
+      "link": "index.php?page=news"
+    },
+    {
+      "title": "Admin",
+      "link": "index.php?page=admin-dashboard"
+    }
+  ]
+}
