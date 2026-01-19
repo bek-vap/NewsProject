@@ -1,25 +1,27 @@
 <?php
-require_once __DIR__ . '/../../models/Header.php';
-
-$headerModel = new Header();
-$header = $headerModel->get();
+$title = $title ?? 'News Project';
 ?>
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title><?= htmlspecialchars($title) ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
 
 <header>
-    <h2>
-        <?= htmlspecialchars($header['site_name'] ?? 'News') ?>
-    </h2>
+    <div class="container">
+        <h1>News Project</h1>
 
-    <nav>
-        <?php if (!empty($header['menu'])): ?>
-            <?php foreach ($header['menu'] as $item): ?>
-                <a href="<?= htmlspecialchars($item['link']) ?>">
-                    <?= htmlspecialchars($item['title']) ?>
-                </a>
-                |
-            <?php endforeach; ?>
-        <?php endif; ?>
-    </nav>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="index.php?page=news">News</a></li>
+                <li><a href="index.php?page=admin-login">Admin</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
-<hr>
+<main>
