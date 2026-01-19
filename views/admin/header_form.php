@@ -5,7 +5,7 @@
     <title>Header Form</title>
 </head>
 <body>
-
+<?php require_once __DIR__ . '/../layout/header.php'; ?>
 <h2>Header tahrirlash</h2>
 
 <p>
@@ -42,5 +42,6 @@
 
 </form>
 
+<?php require_once __DIR__ . '/../layout/footer.php'; ?>
 </body>
 </html>
