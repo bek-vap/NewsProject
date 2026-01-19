@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-    <meta charset="UTF-8">
-    <title>Header Form</title>
-</head>
-<body>
-<?php require_once __DIR__ . '/../layout/header.php'; ?>
+<?php
+$title = 'Header Form';
+require_once __DIR__ . '/../layout/header.php';
+?>
 <h2>Header tahrirlash</h2>
 
 <p>
@@ -43,5 +39,3 @@
 </form>
 
 <?php require_once __DIR__ . '/../layout/footer.php'; ?>
-</body>
-</html>
