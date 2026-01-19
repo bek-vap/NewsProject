@@ -1,13 +1,13 @@
 
 :root{
-  --bg: #0b0b0b;
+  --bg: #090909;
   --panel: #141414;
-  --panel2: #1c1c1c;
+  --panel2: #1a1a1a;
   --text: #f2f2f2;
   --muted: #bdbdbd;
-  --accent: #f6b000;     /* oltin/sariq aksent */
-  --accent2: #ffcc33;
-  --border: #2b2b2b;
+  --accent: #ff9000;     /* orange accent */
+  --accent2: #ffb340;
+  --border: #2a2a2a;
   --danger: #ff3b3b;
   --ok: #00d26a;
 }
@@ -17,7 +17,7 @@ html,body{ height:100%; }
 body{
   margin:0;
   font-family: Arial, sans-serif;
-  background: var(--bg);
+  background: radial-gradient(circle at top, #111 0%, var(--bg) 40%, #070707 100%);
   color: var(--text);
 }
 
@@ -67,8 +67,8 @@ a:hover{ text-decoration:underline; }
   display:inline-block;
   padding: 8px 12px;
   border-radius: 10px;
-  background: var(--panel);
-  border: 1px solid var(--border);
+  background: #0f0f0f;
+  border: 1px solid #1f1f1f;
   color: var(--text);
 }
 .nav a:hover{
@@ -82,9 +82,10 @@ a:hover{ text-decoration:underline; }
 }
 .card{
   background: var(--panel);
-  border: 1px solid var(--border);
+  border: 1px solid #1f1f1f;
   border-radius: 14px;
   padding: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
 }
 .hr{
   border:0;
@@ -182,4 +183,10 @@ input:focus, textarea:focus{
   padding: 18px 0;
   color: var(--muted);
   font-size: 12px;
+}
+
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px;
 }

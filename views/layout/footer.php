@@ -1,9 +1,12 @@
-<hr>
+</div>
+</main>
 
-<footer>
-    <p>
-        © <?= date('Y') ?> News Project. Barcha huquqlar himoyalangan.
-    </p>
+<footer class="site-footer">
+    <div class="container">
+        <p>
+            © <?= date('Y') ?> News Project. Barcha huquqlar himoyalangan.
+        </p>
+    </div>
 </footer>
 
 </body>

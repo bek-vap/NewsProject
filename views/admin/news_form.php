@@ -1,55 +1,49 @@
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-    <meta charset="UTF-8">
-    <title>News Form</title>
-</head>
-<body>
-<?php require_once __DIR__ . '/../layout/header.php'; ?>
-<h2>
-    <?= empty($item['id']) ? "Yangi yangilik qo‘shish" : "Yangilikni tahrirlash" ?>
-</h2>
+<?php
+$title = 'News Form';
+require_once __DIR__ . '/../layout/header.php';
+?>
+<section class="card">
+    <h2 class="h1">
+        <?= empty($item['id']) ? "Yangi yangilik qo‘shish" : "Yangilikni tahrirlash" ?>
+    </h2>
 
-<p>
-    <a href="index.php?page=admin_dashboard">← Dashboardga qaytish</a>
-</p>
+    <a class="btn secondary" href="index.php?page=admin_dashboard">← Dashboardga qaytish</a>
 
-<form method="POST" action="index.php?page=admin_news_save">
+    <div class="hr"></div>
 
-    <!-- Edit bo‘lsa ID yuboriladi -->
-    <input type="hidden" name="id" value="<?= htmlspecialchars($item['id'] ?? '') ?>">
+    <form method="POST" action="index.php?page=admin_news_save">
 
-    <div>
-        <label>Sarlavha:</label><br>
-        <input
-            type="text"
-            name="title"
-            value="<?= htmlspecialchars($item['title'] ?? '') ?>"
-            required
-            style="width:400px;"
-        >
-    </div>
+        <!-- Edit bo‘lsa ID yuboriladi -->
+        <input type="hidden" name="id" value="<?= htmlspecialchars($item['id'] ?? '') ?>">
 
-    <br>
+        <div>
+            <label>Sarlavha:</label>
+            <input
+                type="text"
+                name="title"
+                value="<?= htmlspecialchars($item['title'] ?? '') ?>"
+                required
+            >
+        </div>
 
-    <div>
-        <label>Matn:</label><br>
-        <textarea
-            name="content"
-            rows="8"
-            cols="60"
-            required
-        ><?= htmlspecialchars($item['content'] ?? '') ?></textarea>
-    </div>
+        <div class="hr"></div>
 
-    <br>
+        <div>
+            <label>Matn:</label>
+            <textarea
+                name="content"
+                rows="8"
+                required
+            ><?= htmlspecialchars($item['content'] ?? '') ?></textarea>
+        </div>
 
-    <button type="submit">
-        <?= empty($item['id']) ? "Saqlash" : "Yangilash" ?>
-    </button>
+        <div class="hr"></div>
 
-</form>
+        <button class="btn" type="submit">
+            <?= empty($item['id']) ? "Saqlash" : "Yangilash" ?>
+        </button>
+
+    </form>
+</section>
 
 <?php require_once __DIR__ . '/../layout/footer.php'; ?>
-</body>
-</html>

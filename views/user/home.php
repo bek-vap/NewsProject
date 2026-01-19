@@ -2,26 +2,26 @@
 require_once __DIR__ . '/../layout/header.php';
 ?>
 
-<h1>Bosh sahifa</h1>
+<section class="card">
+    <h1 class="h1">Bosh sahifa</h1>
 
-<p>So‘nggi yangiliklar portaliga xush kelibsiz.</p>
+    <p>So‘nggi yangiliklar portaliga xush kelibsiz.</p>
 
-<hr>
+    <div class="hr"></div>
 
-<h3>Tezkor havolalar</h3>
-<ul>
-    <li>
-        <a href="index.php?page=news">Barcha yangiliklarni ko‘rish</a>
-    </li>
-</ul>
- 
-<hr>
+    <h3 class="h2">Tezkor havolalar</h3>
+    <ul class="list">
+        <li>
+            <a class="btn" href="index.php?page=news">Barcha yangiliklarni ko‘rish</a>
+        </li>
+    </ul>
 
-<p>
-    <small>
+    <div class="hr"></div>
+
+    <p class="muted">
         © <?= date('Y') ?> News Portal
-    </small>
-</p>
+    </p>
+</section>
 
 <?php
 require_once __DIR__ . '/../layout/footer.php';

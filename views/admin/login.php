@@ -1,38 +1,33 @@
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-    <meta charset="UTF-8">
-    <title>Admin Login</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<?php require_once __DIR__ . '/../layout/header.php'; ?>
-<h2>Admin Login</h2>
+<?php
+$title = 'Admin Login';
+require_once __DIR__ . '/../layout/header.php';
+?>
+<section class="card">
+    <h2 class="h1">Admin Login</h2>
 
-<?php if (!empty($error)): ?>
-    <p style="color:red;">
-        <?= htmlspecialchars($error) ?>
-    </p>
-<?php endif; ?>
+    <?php if (!empty($error)): ?>
+        <p class="muted" style="color: var(--danger);">
+            <?= htmlspecialchars($error) ?>
+        </p>
+    <?php endif; ?>
 
-<form method="POST" action="index.php?page=admin_login">
-    <div>
-        <label>Username:</label><br>
-        <input type="text" name="username" required>
-    </div>
+    <form method="POST" action="index.php?page=admin_login">
+        <div>
+            <label>Username:</label>
+            <input type="text" name="username" required>
+        </div>
 
-    <br>
+        <div class="hr"></div>
 
-    <div>
-        <label>Password:</label><br>
-        <input type="password" name="password" required>
-    </div>
+        <div>
+            <label>Password:</label>
+            <input type="password" name="password" required>
+        </div>
 
-    <br>
+        <div class="hr"></div>
 
-    <button type="submit">Login</button>
-</form>
+        <button class="btn" type="submit">Login</button>
+    </form>
+</section>
 
 <?php require_once __DIR__ . '/../layout/footer.php'; ?>
-</body>
-</html>

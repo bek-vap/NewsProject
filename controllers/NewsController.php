@@ -17,14 +17,14 @@ class NewsController
         require_once __DIR__ . '/../views/user/news_list.php';
     }
 
-    public function detail(): void
+    public function detail($id = null): void
     {
-        if (!isset($_GET['id'])) {
+        $id = $id ?? ($_GET['id'] ?? null);
+        if ($id === null) {
             echo "ID topilmadi";
             return;
         }
 
-        $id = $_GET['id'];
         $item = $this->newsModel->find($id);
 
         require_once __DIR__ . '/../views/user/news_detail.php';
@@ -49,7 +49,7 @@ class NewsController
             $this->newsModel->create($title, $content);
         }
 
-        header("Location: index.php?page=admin-dashboard");
+        header("Location: index.php?page=admin_dashboard");
         exit;
     }
 
@@ -67,7 +67,7 @@ class NewsController
             $this->newsModel->update($id, $title, $content);
         }
 
-        header("Location: index.php?page=admin-dashboard");
+        header("Location: index.php?page=admin_dashboard");
         exit;
     }
 
@@ -80,7 +80,7 @@ class NewsController
         $id = $_GET['id'];
         $this->newsModel->delete($id);
 
-        header("Location: index.php?page=admin-dashboard");
+        header("Location: index.php?page=admin_dashboard");
         exit;
     }
 }

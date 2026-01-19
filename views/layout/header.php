@@ -9,22 +9,26 @@ $title = $title ?? 'News Project';
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($title) ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../public/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<header class="site-header">
     <div class="container">
-        <h1>News Project</h1>
+        <div class="topbar">
+            <div class="brand">
+                <span class="logo" aria-hidden="true"></span>
+                <span class="title">News Project</span>
+            </div>
 
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="index.php?page=news">News</a></li>
-                <li><a href="index.php?page=admin-login">Admin</a></li>
-            </ul>
-        </nav>
+            <nav class="nav" aria-label="Asosiy menyu">
+                <a href="index.php">Home</a>
+                <a href="index.php?page=news">News</a>
+                <a href="index.php?page=admin_login">Admin</a>
+            </nav>
+        </div>
     </div>
 </header>
 
-<main>
+<main class="main">
+    <div class="container">
