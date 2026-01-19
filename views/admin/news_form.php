@@ -5,7 +5,7 @@
     <title>News Form</title>
 </head>
 <body>
-
+<?php require_once __DIR__ . '/../layout/header.php'; ?>
 <h2>
     <?= empty($item['id']) ? "Yangi yangilik qo‘shish" : "Yangilikni tahrirlash" ?>
 </h2>
@@ -50,5 +50,6 @@
 
 </form>
 
+<?php require_once __DIR__ . '/../layout/footer.php'; ?>
 </body>
 </html>
