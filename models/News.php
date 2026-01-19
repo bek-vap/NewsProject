@@ -13,6 +13,8 @@ class News
         }
     }
 
+    // ===== ASOSIY METODLAR =====
+
     public function getAll(): array
     {
         $data = file_get_contents($this->file);
@@ -24,7 +26,7 @@ class News
         $news = $this->getAll();
 
         foreach ($news as $item) {
-            if ($item['id'] == $id) {
+            if ((int)$item['id'] === $id) {
                 return $item;
             }
         }
@@ -43,24 +45,55 @@ class News
             'date'    => date('Y-m-d H:i:s')
         ];
 
-        file_put_contents(
-            $this->file,
-            json_encode($news, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
-        );
+        $this->saveAll($news);
     }
-
 
     public function delete(int $id): void
     {
         $news = $this->getAll();
 
         $news = array_filter($news, function ($item) use ($id) {
-            return $item['id'] != $id;
+            return (int)$item['id'] !== $id;
         });
 
+        $this->saveAll(array_values($news));
+    }
+
+    // ===== CONTROLLER MOSLIGI UCHUN ALIASLAR =====
+    // Endi NewsController'dagi all(), find(), update() xato bermaydi
+
+    public function all(): array
+    {
+        return $this->getAll();
+    }
+
+    public function find($id): ?array
+    {
+        return $this->getById((int)$id);
+    }
+
+    public function update($id, $title, $content): void
+    {
+        $news = $this->getAll();
+
+        foreach ($news as &$item) {
+            if ((int)$item['id'] === (int)$id) {
+                $item['title'] = $title;
+                $item['content'] = $content;
+                break;
+            }
+        }
+
+        unset($item);
+        $this->saveAll($news);
+    }
+
+    // ===== YORDAMCHI =====
+    private function saveAll(array $news): void
+    {
         file_put_contents(
             $this->file,
-            json_encode(array_values($news), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
+            json_encode($news, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
         );
     }
 }
