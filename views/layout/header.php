@@ -9,7 +9,7 @@ $title = $title ?? 'News Project';
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($title) ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../public/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -21,7 +21,7 @@ $title = $title ?? 'News Project';
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="index.php?page=news">News</a></li>
-                <li><a href="index.php?page=admin-login">Admin</a></li>
+                <li><a href="index.php?page=admin_login">Admin</a></li>
             </ul>
         </nav>
     </div>

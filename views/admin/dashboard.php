@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-  <meta charset="UTF-8">
-  <title>Admin Dashboard</title>
-</head>
-<body>
-<?php require_once __DIR__ . '/../layout/header.php'; ?>
+<?php
+$title = 'Admin Dashboard';
+require_once __DIR__ . '/../layout/header.php';
+?>
 <h2>Admin Dashboard</h2>
 
 <p>
@@ -53,5 +49,3 @@
 <?php endif; ?>
 
 <?php require_once __DIR__ . '/../layout/footer.php'; ?>
-</body>
-</html>

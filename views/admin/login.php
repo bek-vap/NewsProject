@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-    <meta charset="UTF-8">
-    <title>Admin Login</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<?php require_once __DIR__ . '/../layout/header.php'; ?>
+<?php
+$title = 'Admin Login';
+require_once __DIR__ . '/../layout/header.php';
+?>
 <h2>Admin Login</h2>
 
 <?php if (!empty($error)): ?>
@@ -34,5 +29,3 @@
 </form>
 
 <?php require_once __DIR__ . '/../layout/footer.php'; ?>
-</body>
-</html>
