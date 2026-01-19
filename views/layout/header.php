@@ -13,18 +13,22 @@ $title = $title ?? 'News Project';
 </head>
 <body>
 
-<header>
+<header class="site-header">
     <div class="container">
-        <h1>News Project</h1>
+        <div class="topbar">
+            <div class="brand">
+                <span class="logo" aria-hidden="true"></span>
+                <span class="title">News Project</span>
+            </div>
 
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="index.php?page=news">News</a></li>
-                <li><a href="index.php?page=admin_login">Admin</a></li>
-            </ul>
-        </nav>
+            <nav class="nav" aria-label="Asosiy menyu">
+                <a href="index.php">Home</a>
+                <a href="index.php?page=news">News</a>
+                <a href="index.php?page=admin_login">Admin</a>
+            </nav>
+        </div>
     </div>
 </header>
 
-<main>
+<main class="main">
+    <div class="container">

@@ -2,40 +2,40 @@
 $title = 'Header Form';
 require_once __DIR__ . '/../layout/header.php';
 ?>
-<h2>Header tahrirlash</h2>
+<section class="card">
+    <h2 class="h1">Header tahrirlash</h2>
 
-<p>
-    <a href="index.php?page=admin_dashboard">← Dashboardga qaytish</a>
-</p>
+    <a class="btn secondary" href="index.php?page=admin_dashboard">← Dashboardga qaytish</a>
 
-<form method="POST" action="index.php?page=admin_header_save">
+    <div class="hr"></div>
 
-    <div>
-        <label>Site title:</label><br>
-        <input
-            type="text"
-            name="site_title"
-            value="<?= htmlspecialchars($header['site_title'] ?? 'News Portal') ?>"
-            required
-            style="width:400px;"
-        >
-    </div>
+    <form method="POST" action="index.php?page=admin_header_save">
 
-    <br>
+        <div>
+            <label>Site title:</label>
+            <input
+                type="text"
+                name="site_title"
+                value="<?= htmlspecialchars($header['site_title'] ?? 'News Portal') ?>"
+                required
+            >
+        </div>
 
-    <div>
-        <label>Top text (header yuqorisidagi matn):</label><br>
-        <textarea
-            name="top_text"
-            rows="3"
-            cols="60"
-        ><?= htmlspecialchars($header['top_text'] ?? '') ?></textarea>
-    </div>
+        <div class="hr"></div>
 
-    <br>
+        <div>
+            <label>Top text (header yuqorisidagi matn):</label>
+            <textarea
+                name="top_text"
+                rows="3"
+            ><?= htmlspecialchars($header['top_text'] ?? '') ?></textarea>
+        </div>
 
-    <button type="submit">Saqlash</button>
+        <div class="hr"></div>
 
-</form>
+        <button class="btn" type="submit">Saqlash</button>
+
+    </form>
+</section>
 
 <?php require_once __DIR__ . '/../layout/footer.php'; ?>
